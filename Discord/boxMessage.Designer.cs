@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BoxMessage));
             this.userContent = new System.Windows.Forms.Label();
             this.friendContent = new System.Windows.Forms.Label();
             this.friendName = new System.Windows.Forms.Label();
             this.time = new System.Windows.Forms.Label();
             this.friendAvatar = new System.Windows.Forms.PictureBox();
+            this.lblCopy = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.friendAvatar)).BeginInit();
             this.SuspendLayout();
             // 
             // userContent
             // 
             this.userContent.AutoSize = true;
-            this.userContent.Location = new System.Drawing.Point(550, 0);
-            this.userContent.MaximumSize = new System.Drawing.Size(680, 0);
+            this.userContent.Location = new System.Drawing.Point(481, 0);
+            this.userContent.MaximumSize = new System.Drawing.Size(640, 0);
             this.userContent.Name = "userContent";
             this.userContent.Size = new System.Drawing.Size(170, 25);
             this.userContent.TabIndex = 0;
@@ -88,11 +90,25 @@
             this.friendAvatar.TabIndex = 4;
             this.friendAvatar.TabStop = false;
             // 
+            // lblCopy
+            // 
+            this.lblCopy.AutoSize = true;
+            this.lblCopy.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCopy.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblCopy.Image = ((System.Drawing.Image)(resources.GetObject("lblCopy.Image")));
+            this.lblCopy.Location = new System.Drawing.Point(647, 2);
+            this.lblCopy.Name = "lblCopy";
+            this.lblCopy.Size = new System.Drawing.Size(70, 19);
+            this.lblCopy.TabIndex = 5;
+            this.lblCopy.Text = "Sao chép";
+            this.lblCopy.Click += new System.EventHandler(this.lblCopy_Click);
+            // 
             // BoxMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
+            this.Controls.Add(this.lblCopy);
             this.Controls.Add(this.friendAvatar);
             this.Controls.Add(this.time);
             this.Controls.Add(this.friendName);
@@ -113,5 +129,6 @@
         private Label friendName;
         private Label time;
         private PictureBox friendAvatar;
+        private Label lblCopy;
     }
 }

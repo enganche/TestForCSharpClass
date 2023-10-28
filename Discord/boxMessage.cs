@@ -32,6 +32,8 @@ namespace Discord
             time.Text = "6h50";
 
             setBoxMessageSize(userContent.Size.Height);
+
+            lblCopy.Location = new Point(4, 4);
         }
 
         public void setFriendMessage(string content, string name)
@@ -51,6 +53,18 @@ namespace Discord
         {
             Size = new Size(Size.Width, contentSize + 32);
             time.Location = new Point(time.Location.X, contentSize);
+        }
+
+        private void lblCopy_Click(object sender, EventArgs e)
+        {
+            if (userContent.Text == "")
+            {
+                Clipboard.SetText(friendContent.Text);
+            }
+            else
+            {
+                Clipboard.SetText(userContent.Text);
+            }
         }
     }
 }
