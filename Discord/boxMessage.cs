@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Discord
 {
-    public partial class boxMessage : UserControl
+    public partial class BoxMessage : UserControl
     {
-        public boxMessage()
+        public BoxMessage()
         {
             InitializeComponent();
         }
@@ -22,12 +22,16 @@ namespace Discord
             userContent.Text = content;
             userContent.AutoSize = true;
 
+            userContent.Location = new Point(this.Size.Width - userContent.Size.Width, userContent.Location.Y);
+
             friendContent.Text = "";
             friendName.Text = "";
 
             friendAvatar.Visible = false;
 
             time.Text = "6h50";
+
+            setBoxMessageSize(userContent.Size.Height);
         }
 
         public void setFriendMessage(string content, string name)
@@ -39,6 +43,14 @@ namespace Discord
             friendName.AutoSize = true;
 
             userContent.Text = "";
+
+            setBoxMessageSize(friendContent.Size.Height);
+        }
+
+        private void setBoxMessageSize(int contentSize)
+        {
+            Size = new Size(Size.Width, contentSize + 32);
+            time.Location = new Point(time.Location.X, contentSize);
         }
     }
 }

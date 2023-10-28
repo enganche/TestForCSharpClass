@@ -8,42 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Discord
 {
-    class Message
-    {
-        public bool IsUser { get; set; }
-        public string Name { get; set; }
-        public string Content { get; set; }
-        public string Avatar { get; set; }
-
-        public Message(bool isUser, string content)
-        {
-            IsUser = isUser;
-            Content = content;
-        }
-
-        public Message(bool isUser, string name, string content, string avatar)
-        {
-            IsUser = isUser;
-            Name = name;
-            Content = content;
-            Avatar = avatar;
-        }
-
-    }
-
-    public partial class MessageForm : Form
+    public partial class MessagePanel : UserControl
     {
         List<Message> messageList = new List<Message>();
 
-        public MessageForm()
+        public MessagePanel()
         {
             InitializeComponent();
+        }
+
+        private void MessagePanel_Load(object sender, EventArgs e)
+        {
             loadSample();
             loadMessage();
-
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
@@ -79,11 +58,11 @@ namespace Discord
 
         private void loadMessage()
         {
-            panelMessage.Controls.Clear();
+            displayMessagePanel.Controls.Clear();
 
             for (int i = 0; i < messageList.Count; i++)
             {
-                boxMessage message = new boxMessage();
+                BoxMessage message = new BoxMessage();
 
                 Message msg = messageList[i];
 
@@ -97,32 +76,14 @@ namespace Discord
                 {
                     message.setFriendMessage(msg.Content, msg.Name);
                 }
+                Random rnd = new Random();
+                message.Location = new Point(displayMessagePanel.Size.Width, displayMessagePanel.Size.Height);
+                Console.WriteLine(message.Location);
 
-                message.Location = new Point(0, (i * 64));
-
-                panelMessage.Controls.Add(message);
-                panelMessage.VerticalScroll.Value = panelMessage.VerticalScroll.Maximum;
+                displayMessagePanel.Controls.Add(message);
             }
-            //foreach (var msg in messageList)
-            //{
-            //    boxMessage message = new boxMessage();
 
-            //    if (msg.IsUser)
-            //    {
-            //        message.setUserMessage(msg.Content);
-            //        message.BackColor = Color.AliceBlue;
-            //    }
-
-            //    else
-            //    {
-            //        message.setFriendMessage(msg.Content, msg.Name);
-            //    }
-
-            //    message.Location = new Point(0, ((messageList.IndexOf(msg) * 64) + 64));
-
-            //    panelMessage.Controls.Add(message);
-            //    panelMessage.VerticalScroll.Value = panelMessage.VerticalScroll.Maximum;
-            //}
+            displayMessagePanel.VerticalScroll.Value = displayMessagePanel.VerticalScroll.Maximum;
         }
 
         private void loadSample()
@@ -131,7 +92,7 @@ namespace Discord
             Message msg = new Message(false, "VNA", "123", "");
             messageList.Add(msg);
 
-            msg = new Message(false, "VNA", "Alo", "");
+            msg = new Message(false, "VNA", "Mong admin duyệt bài. Thật sự khi thấy ds học bổng e rất buồn vì mình đã cố gắng  rất nhiều mà kết quả chẳng như ý. Bao nhiêu công sức ko dc đền đáp. Bên cạnh đó e thấy khi đi thi có 1 số bạn sử dụng điện thoại và tài liệu nhưng giám thị vẫn không bắt(không biết có phải ko thấy ko?). Mình thì cũng chỉ tập trung làm bài chứ ko chẳng muốn tố cáo sợ bị trả thù. Mong các thầy cô có thể coi thi gắt gao hơn và làm hết trách nhiệm của người giám thị để kết quả học bổng dc công bằng ko ạ?", "");
             messageList.Add(msg);
 
             msg = new Message(true, "Chào các bạn");
@@ -185,6 +146,29 @@ namespace Discord
             }
 
 
+        }
+
+    }
+
+    class Message
+    {
+        public bool IsUser { get; set; }
+        public string Name { get; set; }
+        public string Content { get; set; }
+        public string Avatar { get; set; }
+
+        public Message(bool isUser, string content)
+        {
+            IsUser = isUser;
+            Content = content;
+        }
+
+        public Message(bool isUser, string name, string content, string avatar)
+        {
+            IsUser = isUser;
+            Name = name;
+            Content = content;
+            Avatar = avatar;
         }
 
     }

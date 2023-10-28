@@ -1,6 +1,6 @@
 ﻿namespace Discord
 {
-    partial class boxMessage
+    partial class BoxMessage
     {
         /// <summary> 
         /// Required designer variable.
@@ -40,16 +40,17 @@
             // 
             this.userContent.AutoSize = true;
             this.userContent.Location = new System.Drawing.Point(550, 0);
+            this.userContent.MaximumSize = new System.Drawing.Size(680, 0);
             this.userContent.Name = "userContent";
             this.userContent.Size = new System.Drawing.Size(170, 25);
             this.userContent.TabIndex = 0;
             this.userContent.Text = "Đây là tin nhắn mẫu";
-            this.userContent.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // friendContent
             // 
             this.friendContent.AutoSize = true;
             this.friendContent.Location = new System.Drawing.Point(57, 25);
+            this.friendContent.MaximumSize = new System.Drawing.Size(600, 0);
             this.friendContent.Name = "friendContent";
             this.friendContent.Size = new System.Drawing.Size(255, 25);
             this.friendContent.TabIndex = 1;
@@ -87,17 +88,18 @@
             this.friendAvatar.TabIndex = 4;
             this.friendAvatar.TabStop = false;
             // 
-            // boxMessage
+            // BoxMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(254)))), ((int)(((byte)(254)))), ((int)(((byte)(254)))));
             this.Controls.Add(this.friendAvatar);
             this.Controls.Add(this.time);
             this.Controls.Add(this.friendName);
             this.Controls.Add(this.friendContent);
             this.Controls.Add(this.userContent);
-            this.Name = "boxMessage";
-            this.Size = new System.Drawing.Size(720, 64);
+            this.Name = "BoxMessage";
+            this.Size = new System.Drawing.Size(720, 72);
             ((System.ComponentModel.ISupportInitialize)(this.friendAvatar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
