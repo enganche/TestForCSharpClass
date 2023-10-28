@@ -37,7 +37,7 @@
             // txtMessageInput
             // 
             this.txtMessageInput.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMessageInput.Location = new System.Drawing.Point(3, 458);
+            this.txtMessageInput.Location = new System.Drawing.Point(3, 586);
             this.txtMessageInput.Multiline = false;
             this.txtMessageInput.Name = "txtMessageInput";
             this.txtMessageInput.Size = new System.Drawing.Size(628, 51);
@@ -48,7 +48,7 @@
             // btnSendMessage
             // 
             this.btnSendMessage.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSendMessage.Location = new System.Drawing.Point(637, 457);
+            this.btnSendMessage.Location = new System.Drawing.Point(637, 585);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(126, 52);
             this.btnSendMessage.TabIndex = 2;
@@ -71,7 +71,7 @@
             this.displayMessagePanel.AutoScroll = true;
             this.displayMessagePanel.Location = new System.Drawing.Point(3, 41);
             this.displayMessagePanel.Name = "displayMessagePanel";
-            this.displayMessagePanel.Size = new System.Drawing.Size(760, 411);
+            this.displayMessagePanel.Size = new System.Drawing.Size(760, 539);
             this.displayMessagePanel.TabIndex = 4;
             // 
             // MessagePanel
@@ -83,7 +83,7 @@
             this.Controls.Add(this.btnSendMessage);
             this.Controls.Add(this.txtMessageInput);
             this.Name = "MessagePanel";
-            this.Size = new System.Drawing.Size(772, 512);
+            this.Size = new System.Drawing.Size(772, 640);
             this.Load += new System.EventHandler(this.MessagePanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

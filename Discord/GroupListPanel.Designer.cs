@@ -59,7 +59,7 @@
             this.Controls.Add(this.lblChat);
             this.Controls.Add(this.groupFlowPanel);
             this.Name = "GroupListPanel";
-            this.Size = new System.Drawing.Size(240, 512);
+            this.Size = new System.Drawing.Size(240, 640);
             this.Load += new System.EventHandler(this.GroupListPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
